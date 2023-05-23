@@ -9,5 +9,7 @@ def main() -> None:
     application = Application.builder().token(settings.telegram_token).build()
     application.add_handler(main_handler)
     application.run_polling()
+
+
 if __name__ == "__main__":
     main()
