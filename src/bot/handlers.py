@@ -1,7 +1,7 @@
 from telegram.ext import CommandHandler, ConversationHandler
 
-from bot.constants.state import MAIN_MENU
-from bot.conversations.main_application import main_menu, start, stop
+from src.bot.constants.state import MAIN_MENU
+from src.bot.conversations.main_application import main_menu, start, stop
 
 
 main_handler = ConversationHandler(

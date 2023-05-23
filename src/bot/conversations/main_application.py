@@ -1,11 +1,11 @@
 from telegram import Update
 from telegram.ext import ContextTypes, ConversationHandler
 
-from bot.constants import state
+from src.bot.constants import state
 # from bot.constants.info.menu import ALL_MENU
 # uncomment after adding the menu manager
-from bot.constants.info.text import START_MESSAGE, STOP_MESSAGE
-from bot.conversations.menu_application import menu
+from src.bot.constants.info.text import START_MESSAGE, STOP_MESSAGE
+from src.bot.conversations.menu_application import menu
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
