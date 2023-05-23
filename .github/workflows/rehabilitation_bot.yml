@@ -1,1 +1,35 @@
+name: Rehabilitation Bot
 
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.11.1
+
+      - name: Install dependencies
+        run: |
+          # обновление pip
+          python -m pip install --upgrade pip 
+          # установка flake8 и его плагинов
+          pip install flake8 pep8-naming flake8-broken-line flake8-return flake8-isort
+          pip install mypy
+          # установка зависимостей
+          pip install -r requirements.txt 
+
+      - name: Run flake8
+        run: flake8
+
+      - name: Run mypy
+        run: mypy
