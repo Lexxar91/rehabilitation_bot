@@ -10,4 +10,4 @@ class Settings(BaseSettings):
         env_file_encoding = 'utf-8'
 
 
-settings = Settings(token='1212dgfrg')
+settings = Settings(telegram_token='1212dgfrg')
