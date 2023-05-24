@@ -52,7 +52,7 @@ jobs:
       - name: Push bot to Docker Hub
         uses: docker/build-push-action@v2
         with:
-          context: bot
+          context: .
           file: Dockerfile
           push: true
           tags: rehabilitation_bot/bot:latest
