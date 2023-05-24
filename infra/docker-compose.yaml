@@ -10,7 +10,7 @@ services:
       - ../.env
 
   bot:
-    image: rehabilitation_bot/bot:latest
+    image: lexxar91/bot:latest
     restart: unless-stopped
     depends_on:
       - db

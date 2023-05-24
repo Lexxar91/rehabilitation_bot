@@ -55,5 +55,5 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: rehabilitation_bot/bot:latest
+          tags: lexxar91/bot:latest
 
