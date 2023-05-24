@@ -1,4 +1,4 @@
-from src.bot.constants import key
+from bot.constants import key
 
 
 MAIN_MENU = {

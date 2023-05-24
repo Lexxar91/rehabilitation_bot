@@ -1,7 +1,7 @@
 from telegram.ext import Application
 
-from src.bot.core.settings import settings
-from src.bot.handlers import main_handler
+from bot.core.settings import settings
+from bot.handlers import main_handler
 
 
 def main() -> None:
