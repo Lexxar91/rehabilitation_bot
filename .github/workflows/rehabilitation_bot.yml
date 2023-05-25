@@ -70,6 +70,6 @@ jobs:
             stack_file_name: docker-compose.yml
             script: |
               sudo docker pull lexxar91/bot:latest
-              sudo docker-compose -f app/infra/docker-compose.yaml stop
-              sudo docker-compose -f app/infra/docker-compose.yaml rm bot
+              sudo docker-compose -f /app/infra/docker-compose.yaml stop
+              sudo docker-compose -f /app/infra/docker-compose.yaml rm bot
 
