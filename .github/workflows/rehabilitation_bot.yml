@@ -33,7 +33,7 @@ jobs:
 #        run: mypy .
 
   build_and_push_to_docker_hub:
-    name: Push Docker image to Docker Hub
+    #name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     needs: linters_test
 
@@ -70,6 +70,6 @@ jobs:
             stack_file_name: docker-compose.yml
             script: |
               sudo docker pull lexxar91/bot:latest
-              sudo docker-compose docker-compose stop
-              sudo docker-compose docker-compose rm bot
+              sudo docker-compose stop
+              sudo docker-compose rm bot
 
