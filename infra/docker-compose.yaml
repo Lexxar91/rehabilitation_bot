@@ -1,21 +1,21 @@
 services:
-  db:
-    image: postgres:15.3
-    restart: unless-stopped
-    ports:
-      - "5432:5432"
-    volumes:
-      - db_data:/var/lib/postgresql/data/
-    env_file:
-      - ../.env
+#  db:
+#    image: postgres:15.3
+#    restart: unless-stopped
+#    ports:
+#      - "5432:5432"
+#    volumes:
+#      - db_data:/var/lib/postgresql/data/
+#    env_file:
+#      - ../.env
 
   bot:
     image: lexxar91/bot:latest
     restart: unless-stopped
-    depends_on:
-      - db
+#    depends_on:
+#      - db
     env_file:
       - ./.env
-
-volumes:
-  db_data:
+#
+#volumes:
+#  db_data:
