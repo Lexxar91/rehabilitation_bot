@@ -49,5 +49,7 @@ jobs:
               git clone https://github.com/Lexxar91/rehabilitation_bot
               sudo docker-compose stop
               sudo docker-compose rm bot
+              touch .env
+              echo SECRET_KEY=${{ secrets.TELEGRAM_TOKEN }} >> .env
               sudo docker-compose up -d 
 
