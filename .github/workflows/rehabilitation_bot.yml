@@ -47,9 +47,12 @@ jobs:
             stack_file_name: docker-compose.yml
             script: |
               git clone https://github.com/Lexxar91/rehabilitation_bot
+              cd rehabilitation_bot/infra
               sudo docker-compose stop
               sudo docker-compose rm bot
+              cd ..
               touch .env
               echo SECRET_KEY=${{ secrets.TELEGRAM_TOKEN }} >> .env
+              cd infra
               sudo docker-compose up -d 
 
