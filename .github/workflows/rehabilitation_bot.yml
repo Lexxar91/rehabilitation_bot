@@ -38,16 +38,6 @@ jobs:
      runs-on: ubuntu-latest
      needs: linters_test
      steps:
-       - name: Stop containers using port 5432
-         run: |
-           # Find the process that is using port 5432
-           port_5432_pid=$(netstat -an | grep :5432 | awk '{print $7}')
-           
-           # If a process is using port 5432, stop it
-           if [ -n "$port_5432_pid" ]; then
-             sudo kill $port_5432_pid
-           fi
-
        - name: executing remote ssh commands to deploy
          uses: appleboy/ssh-action@master
          with:
@@ -56,6 +46,7 @@ jobs:
            key: ${{ secrets.SSH }}
            stack_file_name: docker-compose.yaml
            script: |
+             sudo docker stop $(sudo docker ps -a -q --filter="expose=5432")
              rm -r rehabilitation_bot
              git clone https://github.com/Lexxar91/rehabilitation_bot
              cd rehabilitation_bot
