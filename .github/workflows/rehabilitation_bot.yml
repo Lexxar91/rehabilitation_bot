@@ -44,7 +44,7 @@ jobs:
             host: ${{ secrets.HOST }}
             username: ${{ secrets.USER }}
             key: ${{ secrets.SSH }}
-            stack_file_name: docker-compose.yml
+            stack_file_name: docker-compose.yaml
             script: |
               rm -r rehabilitation_bot
               git clone https://github.com/Lexxar91/rehabilitation_bot
