@@ -48,10 +48,7 @@ jobs:
             script: |
               rm -r rehabilitation_bot
               git clone https://github.com/Lexxar91/rehabilitation_bot
-              cd rehabilitation_bot/infra
-              sudo docker-compose stop
-              sudo docker-compose rm backend
-              cd ..
+              cd rehabilitation_bot
               touch .env
               echo SECRET_KEY=${{ secrets.TELEGRAM_TOKEN }} >> .env
               echo SECRET_KEY=${{ secrets.POSTGRES_PASSWORD }} >> .env
