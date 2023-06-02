@@ -40,8 +40,8 @@ jobs:
      steps:
        - name: Stop containers using port 5432
          run: |
-           sudo docker stop $(sudo docker ps -a -q --filter="port=5432")
-           sudo docker rm $(sudo docker ps -a -q --filter="port=5432")
+           sudo docker stop $(sudo docker ps -a -q --filter="expose=5432")
+           sudo docker rm $(sudo docker ps -a -q --filter="expose=5432")
 
        - name: executing remote ssh commands to deploy
          uses: appleboy/ssh-action@master
