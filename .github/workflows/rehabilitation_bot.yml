@@ -40,8 +40,13 @@ jobs:
      steps:
        - name: Stop containers using port 5432
          run: |
-           sudo docker stop $(sudo docker ps -a -q --filter="expose=5432")
-           sudo docker rm $(sudo docker ps -a -q --filter="expose=5432")
+           # Find the process that is using port 5432
+           port_5432_pid=$(netstat -an | grep :5432 | awk '{print $7}')
+           
+           # If a process is using port 5432, stop it
+           if [ -n "$port_5432_pid" ]; then
+             sudo kill $port_5432_pid
+           fi
 
        - name: executing remote ssh commands to deploy
          uses: appleboy/ssh-action@master
